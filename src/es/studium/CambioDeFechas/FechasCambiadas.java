@@ -2,7 +2,7 @@ package es.studium.CambioDeFechas;
 
 import java.util.Scanner;
 
-public class Fechas_Pruebas
+public class FechasCambiadas
 {
 	public static void main(String[] args)
 	{
