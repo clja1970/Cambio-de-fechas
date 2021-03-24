@@ -34,10 +34,11 @@ public class Fechas_Cambiadas2  implements ActionListener, WindowListener
 		ventana.add(lblAmericana);
 		btnTransformacion.addActionListener(this);
 		ventana.setSize(200,190);
+
 		ventana.setResizable(true);
 		ventana.setLocationRelativeTo(null);
 		ventana.addWindowListener(this);
-		ventana.requestFocus();
+		
 		ventana.setVisible(true);
 	}
 
@@ -96,18 +97,32 @@ public class Fechas_Cambiadas2  implements ActionListener, WindowListener
 
 	@Override
 	public void actionPerformed(ActionEvent event)
-	{
-		try {
+	{	
 
-			if (btnTransformacion.equals(event.getSource()))
+		if (btnTransformacion.equals(event.getSource()))
+		{
+
+			//txtFecha.setText(arrayFecha2[0]+arrayFecha2[1]+arrayFecha2[2]);
+			if (txtFecha.getText().length() >0)
 			{
 				String[] arrayFecha = txtFecha.getText().split("/");
 				txtFechaTransformada.setText(arrayFecha[2]+"/"+arrayFecha[1]+"/"+arrayFecha[0]);
-			}
-		}catch (ArrayIndexOutOfBoundsException e)
-		{
-			txtFecha.setText("");
-		}
 
+			}
+			else 
+			{
+				String[] arrayFecha = txtFechaTransformada.getText().split("/");
+				txtFecha.setText(arrayFecha[2]+"/"+arrayFecha[1]+"/"+arrayFecha[0]);
+
+			}
+		}
 	}
 }
+
+
+
+
+
+
+
+
